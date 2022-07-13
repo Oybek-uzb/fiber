@@ -9,6 +9,8 @@ func main() {
 		return c.SendString("Hello, World!")
 	})
 
+	app.Static("/", "./internal")
+
 	app.Get("/:param", func(c *fiber.Ctx) error {
 		return c.SendString("param: " + c.Params("param"))
 	})
